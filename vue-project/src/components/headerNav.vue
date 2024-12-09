@@ -53,8 +53,12 @@
       margin-left: 2vw;
       background:none;
       color: white;
-      
+      z-index: 1;
 
+    }
+
+    ul{
+      z-index: 1;
     }
    
     #divHead{
@@ -67,6 +71,8 @@
       top: 0;
     left: 0;
     border-bottom: 1px solid black;
+    z-index: 0;
+    
     
     
     }
