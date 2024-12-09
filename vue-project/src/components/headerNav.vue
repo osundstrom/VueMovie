@@ -50,15 +50,15 @@
     button{
       background-color: none  ;
       font-weight: 900;
-      font-size: 120%;
+      font-size: 150%;
       margin-top: 2vh;
       margin-left: 2vw;
       background:none;
       color: white;
       z-index: 1;
-      position: fixed;
-      top:-1vh;
-      left: -1vw;
+      position:absolute;
+      top: -18vh;
+      
       
     }
     

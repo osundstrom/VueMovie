@@ -18,7 +18,7 @@
     footer{
         text-align: center;
         width: 100vw;
-        position: fixed;
+        position: relative;
         left: 0;
         bottom: 1%;
         a {
