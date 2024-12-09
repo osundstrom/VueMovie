@@ -11,8 +11,8 @@
 <template>
     <article>
         <h2>{{movie.name}}</h2>
-        <p>{{movie.ImdbRating}} </p>
-        <p>{{movie.watched}} </p>
+        <p>Betyg: {{movie.ratingImdb}} </p>
+        <p>Sett den: {{movie.watched ? "Ja" : "Nej"}} </p>
     </article>
 
 </template>
@@ -22,5 +22,7 @@ article{
     background-color: white;
     border: 1px solid black;
     max-width: 90vw;
+    margin-bottom: 1vh;
+    background-color: lightgoldenrodyellow;
 }
 </style>

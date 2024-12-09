@@ -5,31 +5,30 @@ import movie from '../components/movie.vue'
 export default {
   data(){
     return {
-      allMovies:[
-        {
-        id: 0,
-        name: "test1",
-        ImdbRating: 1,
-        watched: true
-        },
-        {
-        id: 1,
-        name: "test2",
-        ImdbRating: 2,
-        watched: true
-        },
-        {
-        id: 2,
-        name: "test3",
-        ImdbRating: 3,
-        watched: true
-        }
-      ]
+      allMovies:[]
+      
     }
   },
-    components: { movie}
+    components: { movie},
+
+    methods: {
+      async getMovies() {
+        try{
+          const res = await fetch("https://koamoment2.onrender.com/movie");
+          const data = await res.json();
+          this.allMovies = data;
+          console.log(allMovies)
+        } catch(error){
+          console.error( error);
+        }
+    }},
+
+    mounted() {
+      
+      this.getMovies();
+    }
+
   }
-    
 
 </script>
 
@@ -41,7 +40,7 @@ export default {
     <div>
       <h1>Filmer</h1>
 
-    <movie v-for="movie in allMovies" :movie="movie" :key="movie.id"/>
+    <movie v-for="movie in allMovies" :movie="movie" :key="movie._id"/>
     </div>
   </main>
   
