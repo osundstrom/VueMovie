@@ -17,7 +17,7 @@ export default {
           const res = await fetch("https://koamoment2.onrender.com/movie");
           const data = await res.json();
           this.allMovies = data;
-          console.log(allMovies)
+
         } catch(error){
           console.error( error);
         }
@@ -39,8 +39,9 @@ export default {
   <main>
     <div>
       <h1>Filmer</h1>
-
+      <div id="divMovie">
     <movie v-for="movie in allMovies" :movie="movie" :key="movie._id"/>
+    </div>
     </div>
   </main>
   
@@ -59,7 +60,13 @@ main{
     
   };
   h1{
-    text-align: left;
+    text-align: center;
+    text-decoration:underline;
+  }
+
+  #divMovie {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
 

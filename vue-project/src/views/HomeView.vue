@@ -14,8 +14,8 @@ export default {
  
   <main>
     <div>
-    <h1>Filmer</h1>
-    <p>Vem gillar inte att titta på en bra film? Jag gör det i alla fall</p>
+    <h1>Film</h1>
+    <p>Vem gillar inte att titta på en bra film eller serie? Jag gör det i alla fall</p>
   </div>
   </main>
   
