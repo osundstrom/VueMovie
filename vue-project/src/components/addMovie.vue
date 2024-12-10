@@ -66,7 +66,7 @@
     <i class="fa-solid fa-plus fa-sm"></i>
   </button>
 </p>
-<div style="min-height: 120px;">
+<div id="Divcol" style="min-height: 120px;">
   <div class="collapse collapse-horizontal" id="collapseWidthExample">
     <div class="card card-body" style="max-width: 80vw;">
         <form @submit.prevent="addMovie">
@@ -93,19 +93,24 @@
     margin-right: 1vw;
     z-index: 1;
 }
-
+#Divcol {
+    z-index: 1;
+}
 .collapse{
     z-index: 1;
 }
 #btnfirst{
     z-index: -1;
 }
+p{
+    z-index: -1;
+}
 
 #allContent {
     position: absolute;
-    left: 10vw;
+    left: 2vw;
     margin-top: 2vh;
-    
+    z-index: 1;
 }
 
 </style>

@@ -84,7 +84,6 @@ main{
   div{
     display: block;
     max-width: 90vw;
-    z-index: -1;
     
   };
   h1{
