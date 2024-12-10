@@ -55,7 +55,7 @@ export default {
 </script>
 
 <template>
-<div>
+<div id="addMovie">
     <addMovie @movieAdded="getMovies()"/>
   </div>
 
@@ -84,6 +84,7 @@ main{
   div{
     display: block;
     max-width: 90vw;
+    z-index: -1;
     
   };
   h1{
@@ -94,6 +95,11 @@ main{
   #divMovie {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  #addMovie {
+    z-index: -1;
+    right: 0;
   }
 
   @media (min-width: 600px) {

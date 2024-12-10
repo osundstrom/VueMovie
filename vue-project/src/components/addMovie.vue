@@ -62,7 +62,7 @@
 <template>
     <div id="allContent">
    <p>
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+  <button id="btnfirst"class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
     <i class="fa-solid fa-plus fa-sm"></i>
   </button>
 </p>
@@ -91,11 +91,21 @@
 <style scoped>
 .form-check-label{
     margin-right: 1vw;
+    z-index: 1;
+}
+
+.collapse{
+    z-index: 1;
+}
+#btnfirst{
+    z-index: -1;
 }
 
 #allContent {
     position: absolute;
-    z-index: 1;
+    left: 10vw;
+    margin-top: 2vh;
+    
 }
 
 </style>

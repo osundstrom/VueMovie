@@ -80,4 +80,8 @@
     
     
     }
+
+    .dropdown-menu{
+      z-index: 1;
+    }
 </style>
