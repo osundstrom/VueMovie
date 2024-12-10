@@ -56,7 +56,7 @@ export default {
 
 <template>
 <div>
-    <addMovie/>
+    <addMovie @movieAdded="getMovies()"/>
   </div>
 
   
