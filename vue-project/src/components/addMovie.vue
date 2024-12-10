@@ -11,7 +11,7 @@
                 watched: false,
 
             },
-            formShow: true, //formulär syns, ej kollapsat
+            
                 
             
         };
@@ -40,7 +40,7 @@
                     const data = await res.json();
                     console.log(data)
 
-                    this.formShow = false;//formulär syns ej, kollapsat
+                    
                     this.movie.ratingImdb = 0;
                     this.movie.name = "";
                     this.movie.watched = false;
@@ -67,7 +67,7 @@
   </button>
 </p>
 <div style="min-height: 120px;">
-  <div class="collapse collapse-horizontal" id="collapseWidthExample" v-show="formShow">
+  <div class="collapse collapse-horizontal" id="collapseWidthExample">
     <div class="card card-body" style="max-width: 80vw;">
         <form @submit.prevent="addMovie">
         <label for="Inputname" class="form-label">Film titel</label>
