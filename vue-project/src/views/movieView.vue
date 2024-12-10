@@ -1,6 +1,8 @@
 <script>
 
 import movie from '../components/movie.vue'
+import addMovie from '../components/addMovie.vue'
+import AddMovie from '../components/addMovie.vue';
 
 export default {
   data(){
@@ -9,7 +11,7 @@ export default {
       
     }
   },
-    components: { movie},
+    components: { movie, addMovie},
 
     methods: {
       async getMovies() {
@@ -17,11 +19,31 @@ export default {
           const res = await fetch("https://koamoment2.onrender.com/movie");
           const data = await res.json();
           this.allMovies = data;
-
         } catch(error){
           console.error( error);
         }
-    }},
+    },
+
+      async deleteMovie(_id) {
+        try{
+          const res = await fetch("https://koamoment2.onrender.com/movie/" + _id, {
+            method: "DELETE",
+            headers: {
+              "Accept": "application/json",
+              "Content-type": "application/json"
+             }
+          });
+          const data = await res.json();
+
+          this.getMovies();
+          
+        } catch(error) {
+          console.error(error)
+        }
+      }
+  
+  //slutar methods
+  },
 
     mounted() {
       
@@ -33,17 +55,22 @@ export default {
 </script>
 
 <template>
-
+<div>
+    <addMovie/>
+  </div>
 
   
   <main>
     <div>
       <h1>Filmer</h1>
       <div id="divMovie">
-    <movie v-for="movie in allMovies" :movie="movie" :key="movie._id"/>
+    <movie @deleteMovie="deleteMovie(movie._id)" v-for="movie in allMovies" :movie="movie" :key="movie._id"/>
     </div>
     </div>
+
+    
   </main>
+  
   
   
 </template>

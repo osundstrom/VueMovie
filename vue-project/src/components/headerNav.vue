@@ -49,7 +49,7 @@
 
     button{
       background-color: none  ;
-      font-weight: 900;
+      font-weight:900;
       font-size: 150%;
       margin-top: 2vh;
       margin-left: 2vw;
@@ -58,7 +58,6 @@
       z-index: 1;
       position:absolute;
       top: -18vh;
-      
       
     }
     
