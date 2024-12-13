@@ -17,7 +17,7 @@
     <p class="card-text">Betyg: {{movie.ratingImdb}} </p>
     <p class="card-text">Sett den: {{movie.watched ? "Ja" : "Nej"}} </p>
     <button @click="$emit(`deleteMovie`)" type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can fa-sm"></i></button>
-    <button type="button" class="btn btn-warning"><i class="fa-regular fa-pen-to-square fa-sm"></i></button>
+    <!--<button type="button" class="btn btn-warning"><i class="fa-regular fa-pen-to-square fa-sm"></i></button>-->
   </div>
 </div>
 
@@ -27,7 +27,7 @@
 <style scoped>
 
 
-.card{
+.card{ 
     
     border: 1px solid black;
     max-width: 90vw;

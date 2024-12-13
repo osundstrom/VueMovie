@@ -1,10 +1,11 @@
 <script>
+//export
   export default {
     name: "Footer.vue"
   }
 
 </script>
-
+<!--Inehåll-->
 <template>
 
     <footer>
@@ -15,6 +16,7 @@
 </template>
 
 <style scoped>
+/*styles*/ 
     footer{
         text-align: center;
         width: 100vw;

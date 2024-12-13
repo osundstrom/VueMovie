@@ -1,43 +1,44 @@
 <script>
 
+//imports
 import movie from '../components/movie.vue'
 import addMovie from '../components/addMovie.vue'
-import AddMovie from '../components/addMovie.vue';
 
-export default {
+
+export default { //export
   data(){
     return {
-      allMovies:[]
+      allMovies:[] //array för o lagar data
       
     }
   },
-    components: { movie, addMovie},
+    components: { movie, addMovie}, //komponenter
 
-    methods: {
-      async getMovies() {
+    methods: { //methods
+      async getMovies() { //funktion för att hämta filmer
         try{
-          const res = await fetch("https://koamoment2.onrender.com/movie");
-          const data = await res.json();
-          this.allMovies = data;
-        } catch(error){
+          const res = await fetch("https://koamoment2.onrender.com/movie"); //hämtar 
+          const data = await res.json(); //vsaret
+          this.allMovies = data; //sätter allmovies till svaret(data)
+        } catch(error){//vid error
           console.error( error);
         }
     },
 
-      async deleteMovie(_id) {
+      async deleteMovie(_id) { //funktion radera baserat på _id
         try{
-          const res = await fetch("https://koamoment2.onrender.com/movie/" + _id, {
-            method: "DELETE",
+          const res = await fetch("https://koamoment2.onrender.com/movie/" + _id, { //radera baserat på id
+            method: "DELETE", //radera
             headers: {
-              "Accept": "application/json",
-              "Content-type": "application/json"
+              "Accept": "application/json", //accepterar json
+              "Content-type": "application/json" //skickar json
              }
           });
-          const data = await res.json();
+          const data = await res.json(); //sätter svaret till data
 
-          this.getMovies();
+          this.getMovies(); //kör getmovies igen för att uppdatera listan
           
-        } catch(error) {
+        } catch(error) { //vid error
           console.error(error)
         }
       }
@@ -45,9 +46,9 @@ export default {
   //slutar methods
   },
 
-    mounted() {
+    mounted() { //lifecykle hook som körs näe en vue komponenet laddats in
       
-      this.getMovies();
+      this.getMovies(); //körs getMovies
     }
 
   }
@@ -56,7 +57,7 @@ export default {
 
 <template>
 <div id="addMovie">
-    <addMovie @movieAdded="getMovies()"/>
+    <addMovie @movieAdded="getMovies()"/> <!--när film lagt till via addMovie komponenten kör GetMovies -->
   </div>
 
   
@@ -64,6 +65,7 @@ export default {
     <div>
       <h1>Filmer</h1>
       <div id="divMovie">
+        <!--Listar alla filmer via movie komponenten, gör detta genom varje film unika _id -->
     <movie @deleteMovie="deleteMovie(movie._id)" v-for="movie in allMovies" :movie="movie" :key="movie._id"/>
     </div>
     </div>
@@ -76,6 +78,8 @@ export default {
 </template>
 
 <style scoped>
+
+/*Styles*/ 
 main{
   margin-top: 2vh;
   display: flex;

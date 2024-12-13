@@ -1,6 +1,7 @@
 
 <!--Script KOD-->
 <script>
+//export
   export default {
     name: "headerNav",
     components: {
@@ -9,6 +10,7 @@
   }
 
   import { RouterLink } from 'vue-router';
+  //import routerlinks
 
 </script>
 
@@ -25,7 +27,7 @@
 </div>
 
 <div class="dropdown">
-
+<!--Knappp för dropwdown meny ne routerlinks-->
 <button class="dropdown btn btn-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
   &#9776;
 </button>
@@ -46,7 +48,7 @@
 <style scoped>
   
     
-
+/*styles*/ 
     button{
       background-color: none  ;
       font-weight:900;
